@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="absolute inset-0 flex justify-center items-center">
+    <main className="min-h-screen w-full bg-[rgba(0,0,0,0.40)] rounded-lg">
       content
     </main>
   );
