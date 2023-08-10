@@ -4,7 +4,7 @@ import { Client, LogLevel } from "@notionhq/client";
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
   // Uncomment the line below if you need to debug
-  logLevel: LogLevel.DEBUG,
+  // logLevel: LogLevel.DEBUG,
 });
 
 export const getPage = async (id) => {
@@ -19,7 +19,7 @@ export const getBlock = async (id) => {
   });
   return block;
 };
-// Function to fetch posts (or pages in this context)
+
 export const getBlocks = async (id) => {
   const response = await notion.blocks.children.list({ block_id: id });
   const blocks = response.results;
