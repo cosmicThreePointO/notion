@@ -46,12 +46,12 @@ export const fetchChildPagesWithEmojis = async (PAGE_ID) => {
       const pageData = await getPage(block.id);
       results.push({
         title: block.child_page.title,
+        link: pageData.public_url,
         id: block.id,
         emoji: pageData.icon?.emoji || "", // Using optional chaining in case `icon` is undefined
       });
     }
   }
 
-  console.log(results);
   return results;
 };

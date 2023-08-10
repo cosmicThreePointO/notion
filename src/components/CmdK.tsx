@@ -18,7 +18,6 @@ interface CmdKProps {
 }
 
 export function CmdK({ data }: CmdKProps) {
-  console.log("data in cmd: ", data);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -50,7 +49,14 @@ export function CmdK({ data }: CmdKProps) {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup className="py-4 ">
             {data?.map((d: any, idx: any) => {
-              return <NotionPage title={d.title} emoji={d.emoji} key={idx} />;
+              return (
+                <NotionPage
+                  title={d.title}
+                  emoji={d.emoji}
+                  url={d.link}
+                  key={idx}
+                />
+              );
             })}
           </CommandGroup>
           <CommandSeparator />
