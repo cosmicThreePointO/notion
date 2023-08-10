@@ -12,7 +12,6 @@ This the take home solution built by Germain Boue. Feel free to email me with an
 
 - take into account the rate limit from the API (3 per minute) and maybe use a throttle though I had no issues during building it
 - Determined that I can recursively get the paragraph text and rich_text can contain content to. That would be my next step if I had more time in order to get the secondary text to also display under title
-- Clicking on each would open Link using <Link> and the router navigation to take user to the page
 - cmdk package had a different overlay color, would have to check their source code to see if that can be changed and talk to Design to see if that is ok otherwise find solution
 
 ## Installation
