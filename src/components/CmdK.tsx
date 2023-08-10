@@ -11,8 +11,14 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import { useState, useEffect } from "react";
+import NotionPage from "./NotionPage";
 
-export function CmdK() {
+interface CmdKProps {
+  data: any;
+}
+
+export function CmdK({ data }: CmdKProps) {
+  console.log("data in cmd: ", data);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -42,16 +48,10 @@ export function CmdK() {
         />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup className="py-4">
-            <CommandItem>
-              <span>Calendar</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Search Emoji</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Launch</span>
-            </CommandItem>
+          <CommandGroup className="py-4 ">
+            {data?.map((d: any, idx: any) => {
+              return <NotionPage title={d.title} emoji={d.emoji} key={idx} />;
+            })}
           </CommandGroup>
           <CommandSeparator />
         </CommandList>
